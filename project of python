@@ -1,0 +1,47 @@
+import tkinter as tk
+# Initialize the main Tkinter window
+root = tk.Tk()
+root.geometry("500x600") # Set the window size
+root.title('Tkinter Hub (Student Management & Registration System)') # Set the window
+title
+bg_color = '#273b7a' # Set the background color
+# Attempt to load images
+try:
+# Corrected file paths with quotes
+login_student_icon = tk.PhotoImage(file="/Users/chocoboy/Documents/python
+project/Images/login_student_img.png")
+login_admin_icon = tk.PhotoImage(file="/Users/chocoboy/Documents/python
+project/Images/admin_img.png")
+add_student_icon = tk.PhotoImage(file="/Users/chocoboy/Documents/python
+project/Images/add_student_img.png") # Add student image
+except Exception as e:
+print(f"Error loading image: {e}") # Error handling for loading images
+# Create the welcome page frame
+welcome_page_fn = tk.Frame(root, highlightbackground=bg_color, highlightthickness=3)
+# Create the heading label
+heading_lb = tk.Label(welcome_page_fn,
+text='Welcome To Student Registration\n & Management System',
+bg=bg_color, fg='white', font=('bold', 18))
+heading_lb.place(x=0, y=0, width=400)
+# Create a student login button with text and image combined
+student_login_btn = tk.Button(welcome_page_fn, text='Login Student',
+image=login_student_icon,
+compound='top', bg=bg_color, fg='white', font=('Bold', 15), bd=0)
+student_login_btn.place(x=120, y=125, width=200)
+# Create an admin login button with text and image combined
+admin_login_btn = tk.Button(welcome_page_fn, text='Login Admin',
+image=login_admin_icon,
+compound='top', bg=bg_color, fg='white', font=('Bold', 15), bd=0)
+admin_login_btn.place(x=120, y=250, width=200)
+# Create an add student button with text and image combined
+add_student_btn = tk.Button(welcome_page_fn, text='Add Student',
+image=add_student_icon,
+compound='top', bg=bg_color, fg='white', font=('Bold', 15), bd=0)
+add_student_btn.place(x=120, y=375, width=200) # Positioned below the admin login
+button
+# Pack the frame and configure
+welcome_page_fn.pack(pady=30)
+welcome_page_fn.pack_propagate(False)
+welcome_page_fn.configure(width=400, height=420)
+# Start the Tkinter event loop
+root.mainloop()
